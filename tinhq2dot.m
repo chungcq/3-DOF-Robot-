@@ -1,0 +1,10 @@
+function q2dot=tinhq2dot(ins)
+qdot=ins(1:3);
+q=ins(4:6);
+u=ins(7:9);
+M=matrixM(q);
+C=matrixC(q,qdot);
+G=matrixG(q);
+B=matrixB;
+D=matrixD;
+q2dot=inv(M)*(B*u-C*qdot-D*qdot-G);
